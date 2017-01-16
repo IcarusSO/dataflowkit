@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'dfm',
-  packages = ['dfm'], # this must be the same as the name above
+  name = 'dataflow-management',
+  packages = ['dataflow-management'], # this must be the same as the name above
   version = '0.1',
   description = 'A dataflow management framework for datascientists and engineers',
   author = 'Icarus So',
