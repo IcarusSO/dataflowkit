@@ -2,6 +2,9 @@
 
 A framework for data scientist and engineering collaboration. 
 
+
+![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/dataflow-design.png)
+
 Data scientists and engineers have different skill sets. While data scientists focus on algorithms and probability accuracy,
 engineers focus on data storage and maintance.
 This is a framwork heavily borrowed the idea from functional programming and other data flow management tools such as SAS.
@@ -41,11 +44,13 @@ It is very important to design before implement and keep the data flow graph upd
 
 
 #### Class Diagram
-
+![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/class-diagram.png)
 
 
 #### Feature Development
 A webbased interface for data flow design and code generation will be the next task.
 You are very welcomed to join us and contribute.
+
+Author: icarus.so.ch@gmail.com
 
 
