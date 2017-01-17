@@ -6,11 +6,14 @@ A framework for data scientist and engineering collaboration.
 #### Examples
 - [Graphic Hello UFO Dataflow](https://github.com/IcarusSO/dataflowkit/blob/master/examples/Graphic%20Hello%20UFO%20Dataflow.ipynb)
 - [Simplified Hello UFO Dataflow] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Simplified%20Hello%20UFO%20Dataflow.ipynb)
+![alt tag](https://docs.google.com/drawings/d/1GmUuHiuw8--FWhrAFjw-kz5D4Y15epY1Y6-diBH-AO8/pub?w=2404&h=1165)
+
+
+#### Class Diagram
+![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/class-diagram.png)
 
 
 #### Description
-![alt tag](https://docs.google.com/drawings/d/1GmUuHiuw8--FWhrAFjw-kz5D4Y15epY1Y6-diBH-AO8/pub?w=2404&h=1165)
-
 Data scientists and engineers have different skill sets. While data scientists focus on algorithms and probability accuracy,
 engineers focus on data storage and maintance.
 This is a framwork heavily borrowed the idea from functional programming and other data flow management tools such as SAS.
@@ -47,10 +50,6 @@ It is recommended each team discuss the responsibilities according to members sk
 In general, data scientist focus on algorithm implementations and engineers focus on code refactoring.
 Design is a task which both parties should be involved. 
 It is very important to design before implement and keep the data flow graph updated.
-
-
-#### Class Diagram
-![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/class-diagram.png)
 
 
 #### Future Development
