@@ -47,7 +47,7 @@ It is very important to design before implement and keep the data flow graph upd
 ![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/class-diagram.png)
 
 
-#### Feature Development
+#### Future Development
 A webbased interface for data flow design and code generation will be the next task.
 You are very welcomed to join us and contribute.
 
