@@ -3,6 +3,11 @@
 A framework for data scientist and engineering collaboration. 
 
 
+#### Installation
+    pip install dataflowkit
+    pip3 install dataflowkit
+
+
 #### Examples
 - [Graphic Hello UFO Dataflow](https://github.com/IcarusSO/dataflowkit/blob/master/examples/Graphic%20Hello%20UFO%20Dataflow.ipynb)
 - [Simplified Hello UFO Dataflow] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Simplified%20Hello%20UFO%20Dataflow.ipynb)
