@@ -3,7 +3,13 @@
 A framework for data scientist and engineering collaboration. 
 
 
-![alt tag](https://raw.githubusercontent.com/IcarusSO/dataflowkit/master/img/dataflow-design.png)
+#### Examples
+- [Graphic Hello UFO Dataflow](https://github.com/IcarusSO/dataflowkit/blob/master/examples/Graphic%20Hello%20UFO%20Dataflow.ipynb)
+- [Simplified Hello UFO Dataflow] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Simplified%20Hello%20UFO%20Dataflow.ipynb)
+
+
+#### Description
+![alt tag](https://docs.google.com/drawings/d/1GmUuHiuw8--FWhrAFjw-kz5D4Y15epY1Y6-diBH-AO8/pub?w=2404&h=1165)
 
 Data scientists and engineers have different skill sets. While data scientists focus on algorithms and probability accuracy,
 engineers focus on data storage and maintance.
