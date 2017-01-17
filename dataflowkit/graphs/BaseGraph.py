@@ -1,6 +1,6 @@
-from dfm.recipes import BaseRecipe
-from dfm.datasets import BaseDataset
-from dfm.utils.print_time import print_time, print_end
+from dataflowkit.recipes import BaseRecipe
+from dataflowkit.datasets import BaseDataset
+from dataflowkit.utils.print_time import print_time, print_end
 
 
 class Object(object):

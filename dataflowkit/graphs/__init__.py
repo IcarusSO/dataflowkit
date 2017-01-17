@@ -1,3 +1,3 @@
-from dfm.graphs.BaseGraph import BaseGraph
+from dataflowkit.graphs.BaseGraph import BaseGraph
 
 

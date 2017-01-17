@@ -1,2 +1,1 @@
-from dfm.recipes.BaseRecipe import BaseRecipe
-from dfm.recipes.ConcatRecipe import ConcatRecipe
+from dataflowkit.recipes.BaseRecipe import BaseRecipe

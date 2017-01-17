@@ -1,4 +1,4 @@
-from dfm.datasets import BaseDataset
+from dataflowkit.datasets import BaseDataset
 import pickle
 
 class Local(BaseDataset):

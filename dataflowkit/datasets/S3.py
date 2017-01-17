@@ -1,5 +1,5 @@
 import os
-from dfm.datasets.BaseDataset import BaseDataset
+from dataflowkit.datasets.BaseDataset import BaseDataset
 
 class S3(BaseDataset):
     _data = None

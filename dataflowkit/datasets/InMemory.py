@@ -1,4 +1,4 @@
-from dfm.datasets.BaseDataset import BaseDataset
+from dataflowkit.datasets.BaseDataset import BaseDataset
 
 class InMemory(BaseDataset):
     is_checkpoint = False
