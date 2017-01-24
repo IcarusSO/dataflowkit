@@ -1,25 +1,29 @@
-import os
+import tempfile
+import pickle
+from boto import s3
 from dataflowkit.datasets.BaseDataset import BaseDataset
 
 class S3(BaseDataset):
     _data = None
     
-    def __init__(self, conn, bucket, path):
+    def __init__(self, bucket, path):
         BaseDataset.__init__(self)
-        self._conn = conn
         self._bucket = bucket
         self._path = path
-        self._temporary_path = temporary_path
         
     def save(self, data):
-        conn = self._conn
         bucket = self._bucket
         path = self._path
         
+        key = s3.key.Key(bucket, path)
+        
         f = tempfile.NamedTemporaryFile(delete=True, mode="wb")
+        pickle.dump(data, f)
         
-        conn.upload(path, f, bucket)
+        with open(f.name, 'rb') as f:
+            key.set_contents_from_string(f.read())
         
+        f.close()
         self._data = data
         
         
@@ -30,18 +34,15 @@ class S3(BaseDataset):
            
     
     def reload(self):
-        conn = self._conn
-        path = self._path
         bucket = self._bucket
+        path = self._path
         
-        bucket = conn.get_bucket(bucket)
-        key = bucket.get_key(path)
+        key = s3.key.Key(bucket, path)
         
-        f = tempfile.NamedTemporaryFile(delete=True, mode="rb")
-        
+        f = tempfile.NamedTemporaryFile(delete=True, mode="wb")
         key.get_contents_to_file(f)
-        
-        data = f.read()
-        self._data = data
+        with open(f.name, 'rb') as f:
+            data = pickle.load(f)
         f.close()
 
+        self._data = data
