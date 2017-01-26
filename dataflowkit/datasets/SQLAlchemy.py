@@ -1,5 +1,7 @@
 from dataflowkit.datasets.BaseDataset import BaseDataset
 import pandas as pd
+import numpy as np
+import math
 
 class SQLAlchemy(BaseDataset):
     def __init__(self, session, model, where=None, columns=None):
@@ -9,6 +11,7 @@ class SQLAlchemy(BaseDataset):
         self._columns = columns
     
     def save(self, data):
+        print('SQLAlchemy:save')
         session = self._session
         model = self._model
         
@@ -18,7 +21,15 @@ class SQLAlchemy(BaseDataset):
         for row in rows:
             attrs = list(row)
             for attr in attrs:
-                row[attr] = None if row[attr] is None else str(row[attr])
+                if row[attr] is None:
+                    row[attr] = None
+                elif row[attr] is np.nan:
+                    print(26)
+                    row[attr] = None
+                elif type(row[attr]) is float and math.isnan(row[attr]):
+                    row[attr] = None
+                else:
+                    row[attr] = str(row[attr])
         
         objs = [model(**row) for row in rows]
         session.add_all(objs)
@@ -61,3 +72,4 @@ class SQLAlchemy(BaseDataset):
         for obj in objs:
             session.delete(obj)
             session.flush()
+    
