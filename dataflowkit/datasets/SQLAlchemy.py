@@ -11,7 +11,6 @@ class SQLAlchemy(BaseDataset):
         self._columns = columns
     
     def save(self, data):
-        print('SQLAlchemy:save')
         session = self._session
         model = self._model
         
@@ -24,7 +23,6 @@ class SQLAlchemy(BaseDataset):
                 if row[attr] is None:
                     row[attr] = None
                 elif row[attr] is np.nan:
-                    print(26)
                     row[attr] = None
                 elif type(row[attr]) is float and math.isnan(row[attr]):
                     row[attr] = None
