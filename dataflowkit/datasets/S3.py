@@ -5,6 +5,7 @@ from dataflowkit.datasets.BaseDataset import BaseDataset
 
 class S3(BaseDataset):
     _data = None
+    is_checkpoint = True
     
     def __init__(self, bucket, path):
         BaseDataset.__init__(self)
