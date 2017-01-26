@@ -1,10 +1,12 @@
 from dataflowkit.datasets.BaseDataset import BaseDataset
+import pandas as pd
 
 class SQLAlchemy(BaseDataset):
-    def __init__(self, session, model, where=None):
+    def __init__(self, session, model, where=None, columns=None):
         self._session = session
         self._model = model
         self._where = where
+        self._columns = columns
     
     def save(self, data):
         session = self._session
@@ -28,7 +30,25 @@ class SQLAlchemy(BaseDataset):
         self._data = data
         
     def load(self):
+        if self._data is None:
+            self.reload()
         return self._data
+
+    def reload(self):
+        session = self._session
+        model = self._model
+        where = self._where
+        columns = self._columns
+
+        if columns is None:
+            return
+
+        rows = session.query(*[getattr(model, column) for column in columns])\
+            .filter_by(**where).all()
+
+        data = pd.DataFrame(rows, columns=columns)
+        self._data = data
+
     
     def _remove_past_data(self):
         session = self._session
@@ -40,4 +60,4 @@ class SQLAlchemy(BaseDataset):
         objs = session.query(model).filter_by(**where).all()
         for obj in objs:
             session.delete(obj)
-    
+            session.flush()
