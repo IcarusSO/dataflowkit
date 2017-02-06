@@ -1,6 +1,7 @@
 import tempfile
 import pickle
 from boto import s3
+import os
 from dataflowkit.datasets.BaseDataset import BaseDataset
 
 class S3(BaseDataset):
@@ -40,10 +41,13 @@ class S3(BaseDataset):
         
         key = s3.key.Key(bucket, path)
         
-        f = tempfile.NamedTemporaryFile(delete=True, mode="wb")
+        f = tempfile.NamedTemporaryFile(delete=False, mode="wb")
         key.get_contents_to_file(f)
+        f.close()
         with open(f.name, 'rb') as f:
             data = pickle.load(f)
-        f.close()
+        os.remove(f.name)
 
         self._data = data
+
+        
