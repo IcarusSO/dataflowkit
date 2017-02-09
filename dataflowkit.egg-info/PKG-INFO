@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: dataflowkit
+Version: 0.1.10
+Summary: A dataflow management framework for datascientists and engineers
+Home-page: https://github.com/IcarusSO/dataflowkit
+Author: Icarus So
+Author-email: icarus.so@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/IcarusSO/dataflowkit/tarball/0.1.10
+Description: UNKNOWN
+Keywords: dataflow,data,flow,management
+Platform: UNKNOWN
