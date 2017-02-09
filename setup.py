@@ -15,6 +15,7 @@ setup(
     'pandas',
     'sqlalchemy',
     'zeep',
-    'pymysql'
+    'pymysql',
+    'numpy'
   ]
 )

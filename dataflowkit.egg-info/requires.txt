@@ -1,0 +1,6 @@
+boto
+pandas
+sqlalchemy
+zeep
+pymysql
+numpy

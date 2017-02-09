@@ -145,12 +145,12 @@ class BaseGraph(Object):
         if desc:
             print('-> ' + node.name)
             return
-        print_time('Time for executing ' + node.name)
+        # print_time('Time for executing ' + node.name)
         ins = {n.name: n.val for n in node.pars}
         outs = {n.name: n.val for n in node.childs}
         recipe = node.val
         recipe.execute(ins=ins, outs=outs)
-        print_end('Time for executing ' + node.name)
+        # print_end('Time for executing ' + node.name)
         
     def _execute_dataset(self, node, desc=False):
         if desc:
