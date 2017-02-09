@@ -11,6 +11,10 @@ A framework for data scientist and engineering collaboration.
 #### Examples
 - [Graphic Hello UFO Dataflow](https://github.com/IcarusSO/dataflowkit/blob/master/examples/Graphic%20Hello%20UFO%20Dataflow.ipynb)
 - [Simplified Hello UFO Dataflow] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Simplified%20Hello%20UFO%20Dataflow.ipynb)
+- [Parallel Processes] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Parallel%20Processes.ipynb)
+- [Multi Threading] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Multi%20Threading.ipynb)
+- [Parallel Control] (https://github.com/IcarusSO/dataflowkit/blob/master/examples/Parallel%20Control.ipynb)
+
 ![alt tag](https://docs.google.com/drawings/d/1GmUuHiuw8--FWhrAFjw-kz5D4Y15epY1Y6-diBH-AO8/pub?w=2404&h=1165)
 
 
