@@ -9,8 +9,10 @@ dataflowkit/datasets/S3.py
 dataflowkit/datasets/SQLAlchemy.py
 dataflowkit/datasets/__init__.py
 dataflowkit/graphs/BaseGraph.py
+dataflowkit/graphs/MasterRecipeFactory.py
 dataflowkit/graphs/__init__.py
 dataflowkit/recipes/BaseRecipe.py
+dataflowkit/recipes/MasterRecipe.py
 dataflowkit/recipes/__init__.py
 dataflowkit/utils/__init__.py
 dataflowkit/utils/print_time.py
