@@ -65,6 +65,7 @@ class BaseGraph(Object):
                     
     
     def execute_related(self, nodes, desc=False):
+        related = set(nodes)
         childs = set()
         pending_childs = set(nodes)
         i = 0
@@ -85,17 +86,21 @@ class BaseGraph(Object):
             node = Q.pop()
             if isinstance(node.val, BaseDataset):
                 if node in C:
-                    pars = node.pars
-                    unload_pars = set(pars) - L
-                    if len(unload_pars) > 0:
-                        Q.append(node)
-                        for par in unload_pars:
-                            if par in Q:
-                                Q.remove(par)
-                            Q.append(par)
-                    else:
+                    if node in related:
                         self._execute_dataset(node, desc)
                         L.add(node)
+                    else:
+                        pars = node.pars
+                        unload_pars = set(pars) - L
+                        if len(unload_pars) > 0:
+                            Q.append(node)
+                            for par in unload_pars:
+                                if par in Q:
+                                    Q.remove(par)
+                                Q.append(par)
+                        else:
+                            self._execute_dataset(node, desc)
+                            L.add(node)
                 else:  
                     if node.val.is_checkpoint is True:
                         self._execute_dataset(node, desc)
