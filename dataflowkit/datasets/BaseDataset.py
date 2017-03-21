@@ -1,6 +1,8 @@
 class BaseDataset(object):
     is_checkpoint = False
-    _data = None
+
+    def __init__(self):
+    	self._data = None
     
     def save(self, data):
         self._data = data
