@@ -3,10 +3,10 @@ import pickle
 
 class Local(BaseDataset):
     is_checkpoint = True
-    _data = None
     
     def __init__(self, path):
         self._path = path
+        self._data = None
     
     def save(self, data):
         with open(self._path, 'wb') as f:
