@@ -1,6 +1,6 @@
 from multiprocessing import Process, Queue, cpu_count
-from cv_upload_dfm import recipes as R
-from cv_upload_dfm import datasets as D
+from dataflowkit import recipes as R
+from dataflowkit import datasets as D
 import threading
 import multiprocessing
 import numpy as np
