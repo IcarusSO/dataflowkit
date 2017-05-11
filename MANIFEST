@@ -6,6 +6,7 @@ dataflowkit/datasets/BaseDataset.py
 dataflowkit/datasets/InMemory.py
 dataflowkit/datasets/Local.py
 dataflowkit/datasets/S3.py
+dataflowkit/datasets/S3Raw.py
 dataflowkit/datasets/SQLAlchemy.py
 dataflowkit/datasets/__init__.py
 dataflowkit/graphs/BaseGraph.py
