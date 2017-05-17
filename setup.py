@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'dataflowkit',
   packages = ['dataflowkit', 'dataflowkit.graphs', 'dataflowkit.datasets', 'dataflowkit.recipes', 'dataflowkit.utils'], # this must be the same as the name above
-  version = '0.2.0',
+  version = '0.2.1',
   description = 'A dataflow management framework for datascientists and engineers',
   author = 'Icarus So',
   author_email = 'icarus.so@gmail.com',
