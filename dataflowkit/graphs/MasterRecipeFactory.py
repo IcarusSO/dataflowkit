@@ -15,7 +15,6 @@ def setup_s2m_queue(no_s2m_channels):
 
 
 def create_slave_recipes(s2m_channels, m2s_channel, no_slaves, DummyRecipe, arg, lazy_arg):
-    
     slave_recipes = [Process(target=SlaveRecipe, args=(m2s_channel, s2m_channels, DummyRecipe, arg, lazy_arg)) for _ in np.arange(no_slaves)]
     for slave_recipe in slave_recipes:
         slave_recipe.start()
@@ -69,6 +68,10 @@ class MasterRecipeFactory(object):
         MasterRecipeFactory._lock.release()
         return MasterRecipeFactory._instance
     
+    @staticmethod
+    def wait(async_list):
+        [_() for _ in async_list]
+    
     def __init__(self, no_s2m_channels, no_m2s_channels):
         self._s2m = setup_s2m_queue(no_s2m_channels)
         self._m2s = setup_s2m_queue(no_m2s_channels)
@@ -118,9 +121,6 @@ class MasterRecipeFactory(object):
         self._setup_lock.release()
         ##########################
         
-        # setup = self._setup_dict[DummyRecipe]
         s2m_index_queue, s2m_channels = self._s2m
-        
-        # MasterRecipe = setup['MasterRecipe']
+
         return MasterRecipe(m2s_channel, s2m_channels, s2m_index_queue)
-    
